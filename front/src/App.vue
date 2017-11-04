@@ -1,7 +1,11 @@
 <template>
-<div class="container-fluid">
+<div class="container">
   <navigation></navigation>
-  <router-view></router-view>
+  <div class="row">
+    <div class="col">
+      <router-view></router-view>
+    </div>
+  </div>
 </div>
 </template>
 
