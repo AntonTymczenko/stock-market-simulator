@@ -10,7 +10,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'root',
       component: Home
     },
     {
@@ -24,5 +24,6 @@ export default new Router({
       component: Stocks
     }
 
-  ]
+  ],
+  linkActiveClass: "active"
 })
