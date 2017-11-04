@@ -1,11 +1,7 @@
 <template>
 <div class="container">
   <navigation></navigation>
-  <div class="row">
-    <div class="col">
-      <router-view></router-view>
-    </div>
-  </div>
+  <router-view></router-view>
 </div>
 </template>
 
@@ -14,6 +10,9 @@ import Navigation from '@/components/Navigation'
 export default {
   components: {
     navigation: Navigation
+  },
+  created () {
+    this.$store.dispatch('initStocks')
   }
 }
 </script>
