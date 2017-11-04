@@ -1,6 +1,6 @@
 <template>
-<div>
-  <h1>Stocks - Stocks</h1>
+<div class="mt-4">
+  <h1>Stocks</h1>
   <div class="row">
     <stock
       v-for="stock in stocks"

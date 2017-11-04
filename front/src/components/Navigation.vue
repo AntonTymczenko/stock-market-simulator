@@ -2,7 +2,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <router-link
     class="navbar-brand"
-    :to="{ name: 'root' }">Stock Trader</router-link>
+    :to="{ name: 'root' }">
+    Stock Trader
+  </router-link>
   <button
     class="navbar-toggler"
     type="button"
@@ -14,7 +16,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <router-link
         class="nav-item"
@@ -38,6 +40,9 @@
           <a class="dropdown-item" href="#">Load</a>
         </div>
       </li>
+      <li class="nav-item">
+        <strong class="navbar-text">Funds: {{ funds | currency }}</strong>
+      </li>
     </ul>
   </div>
 </nav>
@@ -45,6 +50,11 @@
 
 <script>
 export default {
+  computed: {
+    funds () {
+      return this.$store.getters.funds
+    }
+  }
 }
 </script>
 
