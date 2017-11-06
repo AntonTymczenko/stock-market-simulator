@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="mt-4">
   <h1>Portfolio</h1>
   <div class="row">
     <stock

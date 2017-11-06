@@ -30,7 +30,7 @@
         :to="{ name: 'stocks', params: {} }">
         <a class="nav-link">Stocks</a>
       </router-link>
-      <li class="nav-item"><a href="#" class="nav-link">End day</a></li>
+      <li class="nav-item"><a href="#" @click="endDay" class="nav-link">End day</a></li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Save & Load
@@ -49,10 +49,19 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   computed: {
     funds () {
       return this.$store.getters.funds
+    }
+  },
+  methods: {
+    ...mapActions([
+      'randomizeStocks'
+    ]),
+    endDay () {
+      this.randomizeStocks()
     }
   }
 }
